@@ -1,9 +1,3 @@
-// =============================================================================
-// SENAI MG • PROGRAMAÇÃO FRONT-END
-// AULA 20: OPERADORES, LÓGICA E ESTRUTURAS CONDICIONAIS
-// ATIVIDADE PRÁTICA: 4 DESAFIOS DE REGRAS DE NEGÓCIO
-// =============================================================================
-
 console.log("=== INÍCIO DA ATIVIDADE 20: OPERADORES E CONDICIONAIS ===");
 
 
@@ -16,11 +10,11 @@ console.log("=== INÍCIO DA ATIVIDADE 20: OPERADORES E CONDICIONAIS ===");
 // - Compras acima de R$ 300,00: 15% de desconto (0.15).
 //
 // Instruções:
-// 1. Declare uma constante 'valorCompra' com o valor 250.00.
+// 1. Declare uma constante '' com o valor 250.00.
 // 2. Declare uma variável com let chamada 'porcentagemDesconto' iniciando com 0.
 // 3. Utilize uma estrutura if / else if / else para definir a porcentagem correta.
-// 4. Calcule o 'valorDesconto' (valorCompra * porcentagemDesconto).
-// 5. Calcule o 'valorFinal' (valorCompra - valorDesconto).
+// 4. Calcule o 'valorDesconto' ( * porcentagemDesconto).
+// 5. Calcule o 'valorFinal' ( - valorDesconto).
 // 6. Exiba no console uma mensagem formatada usando Template Literals:
 //    "Compra: R$ 250.00 | Desconto: R$ 25.00 (10%) | Total a Pagar: R$ 225.00"
 //    (Dica: utilize .toFixed(2) para formatar duas casas decimais).
@@ -28,23 +22,24 @@ console.log("=== INÍCIO DA ATIVIDADE 20: OPERADORES E CONDICIONAIS ===");
 console.log("--- Atividade 1: Desconto Progressivo ---");
 
 // TODO: Escreva seu código da Atividade 1 abaixo:
-const valorCompra = 250.00;
+const valorDaCompra = 250.00;
 let porcentagemDesconto = 0;
 
-if (valorCompra > 300 ){
+if (valorDaCompra > 300 ){
     porcentagemDesconto = 0.15;
-    let valorDesconto = (valorCompra * porcentagemDesconto);
-    let valorFinal = (valorCompra * valorDesconto);
-    console.log("Compra : R$" + valorCompra | "Desconto : R$" + valorDesconto | "Total a Pagar : R$" + valorFinal);
+    let valorDesconto = (valorDaCompra * porcentagemDesconto);
+    let valorFinal = (valorDaCompra * valorDesconto);
+    console.log("Compra : R$" + valorDaCompra + " | Desconto : R$" + valorDesconto + " | Total a Pagar : R$" + valorFinal);
 } else if 
-    (valorCompra > 100.01){
+    (valorDaCompra > 100.01){
     porcentagemDesconto = 0.10;
-    let valorDesconto = (valorCompra * porcentagemDesconto);
-    let valorFinal = (valorCompra * valorDesconto);
-    porcentagemDesconto = 0.10;
-    console.log("Compra : R$" + valorCompra | "Desconto : R$" + valorDesconto | "Total a Pagar : R$" + valorFinal);
-}else 
-    console.log("Compra : R$" + valorCompra | "Sem Desconto"  | "Total a Pagar : R$" + valorFinal);
+    let valorDesconto = (valorDaCompra * porcentagemDesconto);
+    let valorFinal = (valorDaCompra - valorDesconto);
+    console.log("Compra : R$" + valorDaCompra + "Desconto : R$" + valorDesconto + "Total a Pagar : R$" + valorFinal);
+}else {
+    console.log("Compra : R$" + valorDaCompra + "Sem Desconto"  + "Total a Pagar : R$" + valorFinal);
+}
+    
 
 
 
@@ -77,8 +72,21 @@ const usuarioLogado = true;
 const idadeUsuario = 20;
 const perfilUsuario = "ADMIN";
 
+let tokenDigitado = "123";
+let tokenValido = 123;
 
+let tokensIguais = (tokenDigitado === tokenValido);
 
+let temPermissao = (perfilUsuario === "ADMIN") || (perfilUsuario === "GERENTE");
+
+if (usuarioLogado === true && idadeUsuario >= 18 && temPermissao){
+    console.log("🔓 Acesso Autorizado ao Painel Administrativo!")
+}
+else {
+    console.log("🔒 Acesso Negado: Credenciais ou idade insuficientes.")
+}
+
+console.log("Tokens Iguais? " + tokensIguais);
 // =============================================================================
 // ATIVIDADE 3: RASTREADOR DE STATUS DE PEDIDO (SWITCH / CASE)
 // =============================================================================
