@@ -29,15 +29,15 @@ if (valorDaCompra > 300 ){
     porcentagemDesconto = 0.15;
     let valorDesconto = (valorDaCompra * porcentagemDesconto);
     let valorFinal = (valorDaCompra * valorDesconto);
-    console.log("Compra : R$" + valorDaCompra + " | Desconto : R$" + valorDesconto + " | Total a Pagar : R$" + valorFinal);
+    console.log(`Compra : R$ ${valorDaCompra} \nDesconto : R$ ${valorDesconto} \nTotal a Pagar : R$ ${valorFinal}`);
 } else if 
     (valorDaCompra > 100.01){
     porcentagemDesconto = 0.10;
     let valorDesconto = (valorDaCompra * porcentagemDesconto);
     let valorFinal = (valorDaCompra - valorDesconto);
-    console.log("Compra : R$" + valorDaCompra + "Desconto : R$" + valorDesconto + "Total a Pagar : R$" + valorFinal);
+    console.log(`Compra : R$ ${valorDaCompra} \n Desconto : R$ ${valorDesconto} \n Total a Pagar : R$ ${valorFinal}`)
 }else {
-    console.log("Compra : R$" + valorDaCompra + "Sem Desconto"  + "Total a Pagar : R$" + valorFinal);
+    console.log(`Compra : R$ ${valorDaCompra} \n Sem Desconto \n Total a Pagar : R$ ${valorDaCompra}`);
 }
     
 
@@ -109,7 +109,22 @@ console.log("--- Atividade 3: Rastreamento com Switch ---");
 
 const statusPedido = "ENVIADO"
 
-
+switch (statusPedido) {
+    case "CRIADO":
+        console.log("📝 Pedido recebido! Aguardando confirmação de pagamento.");
+        break;
+    case "PAGO":
+        console.log("💳 Pagamento confirmado! Produto sendo embalado.");
+        break;
+    case "ENVIADO":
+        console.log("🚚 Pedido em transporte! A caminho do seu endereço.");
+        break;
+    case "ENTREGUE":
+        console.log("📦 Pedido entregue com sucesso! Aproveite sua compra.");
+        break;
+    default:
+        console.log("❓ Status desconhecido. Por favor, contate o suporte.");
+}
 
 // =============================================================================
 // ATIVIDADE 4: PAR/ÍMPAR E ESTOQUE COM OPERADOR TERNÁRIO (? :)
@@ -135,7 +150,11 @@ console.log("--- Atividade 4: Operador Ternário & Módulo ---");
 
 const numero = 18;
 
+let tipoNumero = (numero % 2 === 0) ? "PAR" : "ÍMPAR";
+console.log(`O número ${numero} é classificado como ${tipoNumero}.`);
 
-
+const quantidadeEstoque = 0;
+let avisoEstoque = (quantidadeEstoque > 0) ? "✅ Em Estoque" : "❌ Esgotado";
+console.log(`Disponibilidade do Produto: ${avisoEstoque}`);
 
 console.log("=== FIM DA ATIVIDADE 20 ===");
